@@ -17,7 +17,7 @@ export class GithubUsers {
   
   }
    load(): Observable<User[]>{
-     return this.http.get('${this.githubApiUrl}/users')
+     return this.http.get(`${this.githubApiUrl}/users`)
      .map(res => <User[]>res.json());
    }
 
