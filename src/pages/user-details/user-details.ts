@@ -12,11 +12,9 @@ import { NavController, NavParams } from 'ionic-angular';
   templateUrl: 'user-details.html'
 })
 export class UserDetailsPage {
+  login: string;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {}
-
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad UserDetailsPage');
+  constructor(public navCtrl: NavController, private navParams: NavParams) {
+    this.login = navParams.get('login');
   }
-
 }
