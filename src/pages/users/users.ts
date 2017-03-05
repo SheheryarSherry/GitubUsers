@@ -17,13 +17,16 @@ import { UserDetailsPage } from '../user-details/user-details';
 export class UsersPage {
   users: User[]
   constructor(public navCtrl: NavController, private githubUsers: GithubUsers) {
-    githubUsers.load().subscribe(users => {
-      this.users=users;
-    })
-  }
-
-   goToDetails(login: string) {
-    this.navCtrl.push(UserDetailsPage, {login});
-  }
+  //   githubUsers.load().subscribe(users => {
+  //     this.users=users;
+  //   })
+  // }
+githubUsers.searchUsers('scotch').subscribe(users=>{
+  console.log(users)
+});
+}
+  //  goToDetails(login: string) {
+  //   this.navCtrl.push(UserDetailsPage, {login});
+  // }
 
 }
